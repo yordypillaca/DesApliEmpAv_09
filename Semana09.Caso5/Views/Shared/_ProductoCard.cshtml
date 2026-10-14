@@ -1,0 +1,20 @@
+@model Producto
+
+<div class="card h-100 producto-card">
+    <div class="card-body">
+        <h2 class="h5 card-title">@Model.Nombre</h2>
+        <p class="card-text text-muted">@Model.Descripcion</p>
+        @if (Model.EnOferta && Model.PrecioOferta.HasValue)
+        {
+            <p class="mb-0">
+                <span class="text-decoration-line-through text-muted">S/ @Model.Precio.ToString("0.00")</span>
+                <span class="fw-bold text-success ms-2">S/ @Model.PrecioOferta.Value.ToString("0.00")</span>
+            </p>
+            <span class="badge text-bg-success mt-2">Oferta</span>
+        }
+        else
+        {
+            <p class="mb-0 fw-bold">S/ @Model.Precio.ToString("0.00")</p>
+        }
+    </div>
+</div>

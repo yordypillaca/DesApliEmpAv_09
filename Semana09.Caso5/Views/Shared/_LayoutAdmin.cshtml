@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Panel</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="admin-body">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-admin">
+            <div class="container">
+                <span class="navbar-brand">Panel de administración</span>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Catalogo" asp-action="Index">Volver a la tienda</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container py-4">
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer border-top">
+        <div class="container py-3 text-muted">
+            &copy; 2026 Tienda · Administración
+        </div>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,15 @@
+@model IReadOnlyList<Producto>
+@{
+    ViewData["Title"] = "Catálogo";
+}
+
+<h1>Catálogo</h1>
+
+<div class="row g-3">
+    @foreach (var producto in Model)
+    {
+        <div class="col-md-4">
+            <partial name="_ProductoCard" model="producto" />
+        </div>
+    }
+</div>
